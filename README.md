@@ -2,7 +2,7 @@
 name: 'Todo App'
 description: 'Create a full stack Todo app using React and Firebase'
 author: '@giridhar7632'
-img: ''
+img: 'https://cloud-2nf3f60u4.vercel.app/0todo_app.png'
 ---
 
 # Todo App
@@ -11,7 +11,7 @@ The combination of React and Firebase can move web applications to complete next
 
 Take a peek at the final project. :point_down:
 
-![Final todo app]()
+![Final todo app](https://cloud-2nf3f60u4.vercel.app/0todo_app.png)
 
 Check out [Live Demo]() and [Source Code]().
 
