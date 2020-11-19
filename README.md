@@ -21,9 +21,7 @@ Check out [Live Demo](https://Todo-App-Final.giridharhackclu.repl.co) and [Sourc
 - You should know some fundamentals of React and React Hooks. 
 - It's also a benefit to have a little bit of knowledge about Firebase. I recommend to complete [this]() workshop for knowledge about Firebase Realtime Database.
 
-## Setup
-
-### Coding Environment
+## Coding Environment
 
 We will be using [Repl.it](https://repl.it) for building our project. [Repl.it](https://repl.it) is an online code editor where you can code in different languages without any installations.
 
@@ -33,14 +31,79 @@ After forking press the `Run` button on the top. If you an output something like
 
 ![starter template](https://cloud-5vj1vtivl.vercel.app/0todo-starter-template.png)
 
-### Creating a Firebase Project
+## Creating a Firebase Project
 
 Now create a [Firebase](https://firebase.google.com) account. You can access with your Google account
 
 > **Firebase**: Google's Firebase is Backend-as-a-Service(BaaS), which makes us easy to add backend to our applications with some knowledge of server-side coding.
 
-We are going to use Firebase Realtime Database as a database for out Todo App. 
+We are going to use Firebase Realtime Database as a database for our Todo App. 
 
-> The Firebase Realtime Database is cloud-hosted. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime and remains available when your app goes offline.
+The **Firebase Realtime Database** is cloud-hosted. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime and remains available when your app goes offline.
+
+Open [Firebase](https://firebase.google.com), after signing in, click the `Go to console` on the top right corner.
+
+![firebase.com]()
+
+Then in your console, If you don't have any projects yet, it will be clean and empty. Click on Create project to add a new project.
+
+![Firebase console]()
+
+Complete all the steps to create a firebase project. Name your project as you wish.
+
+![Step-1]()
+
+After giving a name to your project click the `Continue` button to proceed further. Here is an optional step where you can use Google Analytics for your project, but in this workshop, you won't need it. Click on `Continue`.
+
+![Step-2]()
+
+Finally hit `Create Project`. 
+
+![Step-3]()
+
+:tada: Bingo!!! Your Firebase project will be created. You should see something like this.  
+
+![Project created]()
+
+Click on `Continue` button. You should see something like this.
+
+![Project console]()
+
+Then Let's configure our project with Firebase.
+
+## Configuring Project with Firebase
+
+Click on the Web`(</>)` icon. And register your project with a name.
+
+![Step-1]()
+
+Here comes your app credentials. This code helps your project connect to your Firebase project. 
+
+![Step-2]()
+
+Make sure you copy the data.
+
+Hop on to the forked Repl and create a new component `Firebase.js` inside thr `src` folder.
+
+First of all import `firebase` module, which is already installed and paste the data you copied from Firebase. Your Firebase.js file will be like this with **your API keys**.
+
+```jsx
+import firebase from 'firebase'           // <------------- importing firebase
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCFg0consEutzxGmXo5zxcibJ2-ZUkGRps",
+    authDomain: "todo-app-9f5a0.firebaseapp.com",
+    databaseURL: "https://todo-app-9f5a0.firebaseio.com",
+    projectId: "todo-app-9f5a0",
+    storageBucket: "todo-app-9f5a0.appspot.com",
+    messagingSenderId: "235166947516",
+    appId: "1:235166947516:web:bca35a6c27a240d4bad8b9",
+    measurementId: "G-JYGLVL9X55"
+  }
+
+firebase.initializeApp(firebaseConfig)          // <---------- initializing firebase
+export default firebase
+```
+
 
 
