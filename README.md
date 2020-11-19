@@ -43,11 +43,11 @@ The **Firebase Realtime Database** is cloud-hosted. Data is stored as JSON and s
 
 Open [Firebase](https://firebase.google.com), after signing in, click the `Go to console` on the top right corner.
 
-![firebase.com]()
+![firebase.com](https://cloud-swc0vwpr0.vercel.app/2firebase.png)
 
 Then in your console, If you don't have any projects yet, it will be clean and empty. Click on Create project to add a new project.
 
-![Firebase console]()
+![Firebase console](https://cloud-swc0vwpr0.vercel.app/0firebase_console.png)
 
 Complete all the steps to create a firebase project. Name your project as you wish.
 
