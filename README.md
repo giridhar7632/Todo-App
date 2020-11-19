@@ -25,14 +25,6 @@ React mainly gives us a structured way to create reusable frontend UI components
 - You should know some fundamentals of React.
 - It's also a benefit to have a little bit of knowledge about Firebase. I recommend to complete [this]() workshop for knowledge about Firebase Realtime Database.
 
-### Tech Stack 
-
-- React
-- Firebase
-- Bootstrap
-- Font awesome icons
-- Repl.it
-
 ### Setup
 
 We will be using Repl.it for building our project. Repl.it is an online code editor where you can code in different languages without any installations.
