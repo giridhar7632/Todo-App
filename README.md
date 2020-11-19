@@ -51,23 +51,23 @@ Then in your console, If you don't have any projects yet, it will be clean and e
 
 Complete all the steps to create a firebase project. Name your project as you wish.
 
-![Step-1]()
+![Step-1](https://cloud-swc0vwpr0.vercel.app/6step-1.png)
 
 After giving a name to your project click the `Continue` button to proceed further. Here is an optional step where you can use Google Analytics for your project, but in this workshop, you won't need it. Click on `Continue`.
 
-![Step-2]()
+![Step-2](https://cloud-swc0vwpr0.vercel.app/7step-2.png)
 
 Finally hit `Create Project`. 
 
-![Step-3]()
+![Step-3](https://cloud-swc0vwpr0.vercel.app/8step-3.png)
 
 :tada: Bingo!!! Your Firebase project will be created. You should see something like this.  
 
-![Project created]()
+![Project created](https://cloud-swc0vwpr0.vercel.app/3project_created.png)
 
 Click on `Continue` button. You should see something like this.
 
-![Project console]()
+![Project overview](https://cloud-swc0vwpr0.vercel.app/4project_overview.png)
 
 Then Let's configure our project with Firebase.
 
@@ -75,11 +75,11 @@ Then Let's configure our project with Firebase.
 
 Click on the Web`(</>)` icon. And register your project with a name.
 
-![Step-1]()
+![Register name](https://cloud-swc0vwpr0.vercel.app/5register_app.png)
 
 Here comes your app credentials. This code helps your project connect to your Firebase project. 
 
-![Step-2]()
+![Firebase config](https://cloud-swc0vwpr0.vercel.app/1firebase_sdk.png)
 
 Make sure you copy the data.
 
