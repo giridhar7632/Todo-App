@@ -65,15 +65,17 @@ Finally hit `Create Project`.
 
 ![Project created](https://cloud-swc0vwpr0.vercel.app/3project_created.png)
 
-Click on `Continue` button. You should see something like this.
-
-![Project overview](https://cloud-swc0vwpr0.vercel.app/4project_overview.png)
+Click on `Continue` button.
 
 Then Let's configure our project with Firebase.
 
 ## Configuring Project with Firebase
 
-Click on the Web`(</>)` icon. And register your project with a name.
+Click on the Web`(</>)` icon.
+
+![Project overview](https://cloud-swc0vwpr0.vercel.app/4project_overview.png)
+
+Register your project with a name.
 
 ![Register name](https://cloud-swc0vwpr0.vercel.app/5register_app.png)
 
