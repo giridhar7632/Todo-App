@@ -135,11 +135,15 @@ Now that we have database, let's create a Todo App using the database.
 
 ## CRUD Operations
 
-According to [wikipedia](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+According to [wikipedia](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)...
 
 > “In computer programming, create, read, update, and delete (CRUD) are the four basic functions of persistent storage. Alternate words are sometimes used when defining the four basic functions of CRUD, such as retrieve instead of read, modify instead of update, or destroy instead of delete. CRUD is also sometimes used to describe user interface conventions that facilitate viewing, searching, and changing information; often using computer-based forms and reports. The term was likely first popularized by James Martin in his 1983 book managing the Data-base Environment. The acronym may be extended to CRUDL to cover listing of large data sets which bring additional complexity such as pagination when the data sets are too large to hold easily in memory.”
 
-Create, Read, Update, and Delete (CRUD) are the four basic functions that models should be able to do, at most.
+CRUD stands for Create, Read, Update and Delete.
+
+These are the four most basic operations that can be performed with most traditional database systems and they are the backbone for interacting with any database. 
+
+![C R U D]()
 
 ## Creating Todo App
 
