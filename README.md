@@ -107,6 +107,22 @@ firebase.initializeApp(firebaseConfig)          // <---------- initializing fire
 export default firebase
 ```
 
+## Creating Database
+
+Now let's create a database for our application.
+
+Open the Firebase project console. Click on `Realtime Database` in `Develop` section on the left sidebar. 
+
+![Project Sidebar]()
+
+You will se something like this :point_down:. Click on the `Create Database` button.
+
+![Create Database]()
+
+Set `Start in **Test Mode**`
+
 Let's create interface of our todo app.
 
-##
+## Creating Todo App
+
+### Inputting Todo
