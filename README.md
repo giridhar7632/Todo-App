@@ -119,10 +119,29 @@ You will se something like this :point_down:. Click on the `Create Database` but
 
 ![Create Database]()
 
-Set `Start in **Test Mode**`
+Set `Start in Test Mode` and click on `Enable`.
 
-Let's create interface of our todo app.
+![Test Mode]()
+
+Then your Realtime Database will be created and initiated with `null`(nothing). 
+
+![Realtime Database]()
+
+Firebase intially allows anyone to read and write the database for 30 days. You can edit the rules anytime in `Rules` tab.
+
+![Rules]()
+
+Now that we have database, let's create a Todo App using the database.
+
+## CRUD Operations
+
+According to [wikipedia](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+
+> “In computer programming, create, read, update, and delete (CRUD) are the four basic functions of persistent storage. Alternate words are sometimes used when defining the four basic functions of CRUD, such as retrieve instead of read, modify instead of update, or destroy instead of delete. CRUD is also sometimes used to describe user interface conventions that facilitate viewing, searching, and changing information; often using computer-based forms and reports. The term was likely first popularized by James Martin in his 1983 book managing the Data-base Environment. The acronym may be extended to CRUDL to cover listing of large data sets which bring additional complexity such as pagination when the data sets are too large to hold easily in memory.”
+
+Create, Read, Update, and Delete (CRUD) are the four basic functions that models should be able to do, at most.
 
 ## Creating Todo App
 
-### Inputting Todo
+
+### 
