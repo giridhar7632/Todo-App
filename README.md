@@ -113,23 +113,23 @@ Now let's create a database for our application.
 
 Open the Firebase project console. Click on `Realtime Database` in `Develop` section on the left sidebar. 
 
-![Project Sidebar]()
+![Project Sidebar](https://cloud-9uzz77u17.vercel.app/4project_overview-1.png)
 
 You will se something like this :point_down:. Click on the `Create Database` button.
 
-![Create Database]()
+![Create Database](https://cloud-9uzz77u17.vercel.app/3create_database.png)
 
 Set `Start in Test Mode` and click on `Enable`.
 
-![Test Mode]()
+![Test Mode](https://cloud-9uzz77u17.vercel.app/5test_mode.png)
 
 Then your Realtime Database will be created and initiated with `null`(nothing). 
 
-![Realtime Database]()
+![Realtime Database](https://cloud-9uzz77u17.vercel.app/2database.png)
 
 Firebase intially allows anyone to read and write the database for 30 days. You can edit the rules anytime in `Rules` tab.
 
-![Rules]()
+![Rules](https://cloud-9uzz77u17.vercel.app/1database_rules.png)
 
 Now that we have database, let's create a Todo App using the database.
 
@@ -143,7 +143,7 @@ CRUD stands for Create, Read, Update and Delete.
 
 These are the four most basic operations that can be performed with most traditional database systems and they are the backbone for interacting with any database. 
 
-![C R U D]()
+![CRUD](https://cloud-9uzz77u17.vercel.app/0crud_operations.png)
 
 ## Creating Todo App
 
