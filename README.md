@@ -67,7 +67,7 @@ Finally hit `Create Project`.
 
 Click on `Continue` button.
 
-Then Let's configure our project with Firebase.
+Then let's configure our project with Firebase.
 
 ## Configuring Project with Firebase
 
@@ -85,9 +85,9 @@ Here comes your app credentials. This code helps your project connect to your Fi
 
 Make sure you copy the data.
 
-Hop on to the forked Repl and create a new component `Firebase.js` inside thr `src` folder.
+Hop on to the forked Repl and create a new component `Firebase.js` inside the `src` folder.
 
-First of all import `firebase` module, which is already installed and paste the data you copied from Firebase. Your Firebase.js file will be like this with **your API keys**.
+In `Firebase.js` component, import `firebase` module, which is already installed and paste the data you copied from Firebase. Your `Firebase.js` file will be like this with **your API keys**.
 
 ```jsx
 import firebase from 'firebase'           // <------------- importing firebase
@@ -107,5 +107,6 @@ firebase.initializeApp(firebaseConfig)          // <---------- initializing fire
 export default firebase
 ```
 
+Let's create interface of our todo app.
 
-
+##
