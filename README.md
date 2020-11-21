@@ -7,9 +7,9 @@ img: 'https://cloud-2nf3f60u4.vercel.app/0todo_app.png'
 
 # Todo App
 
-The combination of React and Firebase can move web applications to complete next level. In this workshop, we are going to create an awesome full stack Todo app using React for front-end and Firebase realtime database as back-end. By the end of this workshop, you will learn about implementing CRUD operations using React. 
+The combination of React and Firebase can move web applications to complete next level. In this workshop, we are going to create an awesome full stack Todo app using React for front-end and Firebase realtime database as back-end. By the end of this workshop, you will learn about implementing CRUD operations using Firebase. 
 
-Take a peek at the final project. :point_down:
+Take a peek at what we are going to build in this workshop. :point_down:
 
 ![Final todo app](https://cloud-2nf3f60u4.vercel.app/0todo_app.png)
 
@@ -147,5 +147,58 @@ These are the four most basic operations that can be performed with most traditi
 
 ## Creating Todo App
 
+Let's create the interface of Todo App to perform CRUD operations.
 
-### 
+Create a new folder and name it as `components`. All of our Todo App components will be in this folder.
+
+Create a new file in the `components` folder and name it as `Input.js`. Import `React` into the component and create the functional component and export it.
+
+```jsx
+import React from 'react'
+
+function Input(){
+  // code goes here
+  }
+ 
+ export default Input
+```
+
+Also import the `Firebase.js` file you created before at the top, so that we can use Firebase inside this component.
+
+```jsx
+import firebse from '../Firebase'
+```
+
+Create a `div` with a class of `input` inside the component.  
+
+```jsx
+import React from 'react'
+import firebase from '../Firebase'
+
+function Input(){
+  return(
+    <div className="input">
+      // code goes here
+    </div>
+  )
+}
+
+export default Input
+```
+
+Add an `input` and a button `Add Todo` with class of `add-btn` inside the `div` element.
+
+```html
+<div className="input">
+  <input type="text" placeholder="Enter a Todo..." />
+  <button className="add-btn">
+  <i className="fa fa-plus-circle" aria-hidden="true"></i><span id="btn-text">Add Todo</span> 
+  </button>
+</div>
+```
+
+Here, `<i className="fa fa-plus-circle">` is the [plus icon](https://fontawesome.com/v4.7.0/icon/plus-circle) from [font awesome](https://fontawesome.com/v4.7.0/icons/) for styling. 
+
+Form elements like `<input>`, `<select>` and `<textarea>` in React are slightly different from those of HTML. In HTML, they responsible on their own to handle the user input and update their respective values. But in React, the forms are controlled by components using state. Learn more about React forms [here](https://reactjs.org/docs/forms.html).
+
+
