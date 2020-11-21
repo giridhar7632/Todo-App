@@ -17,7 +17,8 @@ Check out [Live Demo](https://Todo-App-Final.giridharhackclu.repl.co) and [Sourc
 
 ## Prerequisites
 
-- You should have a basic understanding of HTML, CSS, and JavaScript
+- You should have a basic understanding of HTML, CSS, and JavaScript.
+- Some concepts of ES6 feature of JavaScript.
 - You should know some fundamentals of React and React Hooks. 
 - It's also a benefit to have a little bit of knowledge about Firebase. I recommend to complete [this]() workshop for knowledge about Firebase Realtime Database.
 
@@ -200,5 +201,36 @@ Add an `input` and a button `Add Todo` with class of `add-btn` inside the `div` 
 Here, `<i className="fa fa-plus-circle">` is the [plus icon](https://fontawesome.com/v4.7.0/icon/plus-circle) from [font awesome](https://fontawesome.com/v4.7.0/icons/) for styling. 
 
 Form elements like `<input>`, `<select>` and `<textarea>` in React are slightly different from those of HTML. In HTML, they responsible on their own to handle the user input and update their respective values. But in React, the forms are controlled by components using state. Learn more about React forms [here](https://reactjs.org/docs/forms.html).
+
+Create a state value and update it everytime the input changes using `handleChange` function.
+
+```jsx
+import React, { useState } from 'react'  // <-------------- importing useState hook
+import firebase from '../Firebase'
+
+function Input(){
+  const [task, setTask] = useState()   // <------------ creating state variable
+
+  handleChange(e){
+    setTask(e.target.value)    // <---------- updating the state value
+  }
+
+  return(
+    <div className="input">
+      <input type="text" placeholder="Enter a Todo..." value={task} onChange={handleChange} />
+      <button className="add-btn">
+      <i className="fa fa-plus-circle" aria-hidden="true"></i><span id="btn-text">Add Todo</span> 
+      </button>
+    </div>
+  )
+}
+
+export default Input
+```
+
+### 'Create' operation
+
+Let's add the entered data into the database when the user clicks the `Add Todo` button.
+
 
 
