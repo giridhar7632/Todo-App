@@ -152,6 +152,8 @@ Let's create the interface of Todo App to perform CRUD operations.
 
 Create a new folder and name it as `components`. All of our Todo App components will be in this folder.
 
+### Inputting a Todo
+
 Create a new file in the `components` folder and name it as `Input.js`. Import `React` into the component and create the functional component and export it.
 
 ```jsx
@@ -316,7 +318,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo App</h1>
-      <Input />                        // <------------ displaying the component
+      <Input />                        // <------------ rendering the component
     </div>
   );
 }
@@ -328,3 +330,10 @@ export default App;
 
 ![Database]()
 
+The data you add through `input`, after clicking the button, will be appended to Fatabase in realtime.
+
+Now we have to read the data from the database and display it on the app.
+
+### Creating Todo List
+
+Create a new component `TodoList.js` in the components folder.
