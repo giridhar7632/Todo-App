@@ -262,10 +262,69 @@ function handleClick() {
       completed: false
     }
   newTodoRef.set(todo)
-  }
+  setTask("")             
+}
 ```
 
-Here :point_up_2:, we added the data that we get as input into database. By default the task was incomplete.
+Here :point_up_2:, we added the data that we get as input into database. By default the task was incomplete. After the data is added to database, the input field is cleared by setting `task` to empty string(`setTask("")`).
+
+Your final `Input.js` will look like this.
+
+```jsx
+import React, { useState } from 'react'
+import firebase from '../Firebase'
+
+function Input(){
+  const [task, setTask] = useState()
+
+  function handleChange(e){
+    setTask(e.target.value)
+  }
+  function handleClick(){
+    const todoRef = firebase.database().ref('todo')  
+    const newTodoRef = todoRef.push()
+    const todo = {
+      task,
+      completed: false
+    }
+    newTodoRef.set(todo)
+    setTask("")
+  }
+
+  return(
+    <div className="input">
+      <input type="text" placeholder="Enter a Todo..." value={task} onChange={handleChange} />
+      <button className="add-btn" onClick={handleClick}>
+      <i className="fa fa-plus-circle" aria-hidden="true"></i><span id="btn-text">Add Todo</span> 
+      </button>
+    </div>
+  )
+}
+
+export default Input
+```
 
 
+Now import `Input.js` into `App.js` and check your output by adding some data.
+
+```jsx
+import React from 'react'
+import Input from './components/Input'   // <----------- importing Input.js
+import './App.css'
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Todo App</h1>
+      <Input />                        // <------------ displaying the component
+    </div>
+  );
+}
+
+export default App;
+```
+
+![Output with input]()
+
+![Database]()
 
