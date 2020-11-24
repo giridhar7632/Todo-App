@@ -363,6 +363,32 @@ Create a state variable `todoList`. This will be the empty array to which we add
  const [todoList, setTodoList] = useState([])           // <-------- state variable 
 ```
 
+We will read the data only once, after the component is rendered. To do that we use `useEffect` hook.
 
+```jsx
+useEffect(() => {
+  // code goes here
+}, [])
+```
 
+We have get the data in specified reference. To read data at a path and listen for changes, use the `on()` method of `firebase.database.Reference` to observe events. `on()` method is used to synchronize data in real-time. 
 
+```jsx
+useEffect(() => {
+  const todoRef = firebase.database().ref('todo')
+  // Syncronizing
+  todoRef.on()
+
+}, [])
+```
+
+The `on()` method takes two parameters-
+1 The event type - how you control the level of synchronization from the real-time database.
+1 The callback function - the event type above controls the callback function.
+
+Here, we are going to use the `value` event.
+
+---
+Event: `value`,
+Typical usage: "Read and listen for changes to the entire contents of a path."
+---
