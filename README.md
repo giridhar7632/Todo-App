@@ -230,7 +230,7 @@ function Input(){
 export default Input
 ```
 
-### 'Create' operation
+### Create operation
 
 Let's add the entered data into the database when the user clicks the `Add Todo` button.
 
@@ -272,7 +272,8 @@ function handleClick() {
 
 Here :point_up_2:, we added the data that we get as input into database. By default the task was incomplete. After the data is added to database, the input field is cleared by setting `task` to empty string(`setTask("")`).
 
-Your final `Input.js` will look like this.
+<details>
+<summary>Your final `Input.js` will look like this.</summary>
 
 ```jsx
 import React, { useState } from 'react'
@@ -308,6 +309,7 @@ function Input(){
 export default Input
 ```
 
+</details>
 
 Now import `Input.js` into `App.js` and check your output by adding some data.
 
@@ -328,11 +330,11 @@ function App() {
 export default App;
 ```
 
-![Output with input]()
+![Output with input](https://cloud-792qf1oid.vercel.app/0input.js.png)
 
 Looks good, doesn't it! :joy: 
 
-![Database]()
+![Database](https://cloud-792qf1oid.vercel.app/1input_to_database.png)
 
 The data you add through `input`, after clicking the button, will be appended to Firebase in realtime.
 
@@ -470,11 +472,11 @@ export default TodoList
 
 This will display the data that is retrieved from database. Make sure you import and render the `TodoList` component into `App.js`.
 
-![Retrived data]()
+![Retrived data](https://cloud-792qf1oid.vercel.app/2reading_database.png)
 
 So far we have done **Create** and **Read** operations. Half way done!!! :raised_hands:
 
-![Half way done]()
+![Half way done](https://cloud-792qf1oid.vercel.app/7half_way_done_.gif)
 
 Let's continue to work with **Update** and **Delete** operations.
 
@@ -592,7 +594,7 @@ Above code updates the `completed` in the database.
 
 Click on `Run` and check whether it's working.
 
-![completed task]()
+![completed task](https://cloud-792qf1oid.vercel.app/3updating_database.png)
 
 Also let's add styling for the completed tasks.
 
@@ -634,7 +636,7 @@ export default function Todo({ todo }){
 
 Now our completed tasks will be styled accordingly.
 
-![striked off]()
+![struck off](https://cloud-792qf1oid.vercel.app/5struckoff.png)
 
 Let's add functionality to our `delete` button.
 
@@ -700,11 +702,11 @@ export default Todo
 
 </details>
 
-![Delete todo]()
+![Delete todo](https://cloud-792qf1oid.vercel.app/4deleting_database.png)
 
-That's it folks! We completed our Full-stack Todo App. 
+That's it folks! We completed our Full-stack Todo App. Check your final code [here](https://repl.it/@Giridharhackclu/Todo-App-Final#src/App.js).
 
-![Completed]()
+![Completed](https://cloud-792qf1oid.vercel.app/6you_did_it_.gif)
 
 ## Hacking
 
