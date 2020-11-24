@@ -472,7 +472,9 @@ This will display the data that is retrieved from database. Make sure you import
 
 ![Retrived data]()
 
-So far we have done **Create** and **Read** operations.
+So far we have done **Create** and **Read** operations. Half way done!!! :raised_hands:
+
+![Half way done]()
 
 Let's continue to work with **Update** and **Delete** operations.
 
@@ -569,10 +571,10 @@ Let's add functionality to the buttons.
 
 When the `checkbox` is checked, the task is completed. Let's update the value of `completed` to `true`.
 
-Add `onClick` attribute to the checkbox that invokes `completeTodo` function.
+Add `onClick` attribute to the checkbox that invokes `completeTodo` function. Whether the `checkbox` is checked or not depends on the `completed` value.
 
 ```jsx
-<input type="checkbox" onClick={ completeTodo } />
+<input type="checkbox" onClick={ completeTodo } checked={ todo.completed }/>
 ```
 
 To simultaneously write to specific children of a node without overwriting other child nodes, we can use the `update()` method. When calling `update()` updates lower-level child values by specifying a path for the key.
@@ -586,4 +588,145 @@ function completeTodo(){
 }
 ```
 
+Above code updates the `completed` in the database.
 
+Click on `Run` and check whether it's working.
+
+![completed task]()
+
+Also let's add styling for the completed tasks.
+
+<details>
+<summary>Our code so far:</summary>
+
+```jsx
+import React from 'react'
+import firebase from '../Firebase'
+
+export default function Todo({ todo }){
+  const completedStyle = {                  // <------------- styles for completed task
+        fontStyle: "italic",
+        opacity: 0.4,
+        textDecoration: "line-through"
+    }
+
+  function completeTodo(){
+    const todoRef = firebase.database().ref('todo')
+    todoRef.child(todo.id).update({
+      completed: !todo.completed
+    })
+  }
+  return(
+    <div className="todo-item">
+      <div className="task">
+        <input type="checkbox" onClick={ completeTodo }checked={todo.completed}/>
+        <p style={todo.completed ? completedStyle : null} >{todo.task}</p>               // <------------ adding className depending on todo.completed
+      </div>
+      <div className="buttons">
+        <button className="del-btn"><i className="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  )
+}
+```
+
+</details>
+
+Now our completed tasks will be styled accordingly.
+
+![striked off]()
+
+Let's add functionality to our `delete` button.
+
+### 'Delete' operation
+
+Add `onClick` attribute to the button with a `deleteTodo` function.
+
+```jsx
+<button className="del-btn" onClick={ deleteTodo }>
+  <i className="fa fa-trash" aria-hidden="true"></i>
+</button>
+```
+
+The simplest way to delete data is to call `remove()` on a reference to the location of that data.
+
+```jsx
+function deleteTodo(){
+  const todoRef = firebase.database().ref('todo')
+  todoRef.child(todo.id).remove()
+}
+```
+
+<details>
+<summary>Our final Todo component will be somethink like this:</summary>
+
+```jsx
+import React from 'react'
+import firebase from '../Firebase'
+
+function Todo({ todo }){
+  const completedStyle = {
+        fontStyle: "italic",
+        opacity: 0.4,
+        textDecoration: "line-through"
+    }
+  
+  function completeTodo(){
+    const todoRef = firebase.database().ref('todo')
+    todoRef.child(todo.id).update({
+      completed: !todo.completed
+    })
+  }
+  function deleteTodo(){
+    const todoRef = firebase.database().ref('todo')
+    todoRef.child(todo.id).remove()
+  }
+
+  return(
+    <div className="todo-item">
+      <div className="task">
+        <input type="checkbox" onClick={ completeTodo }checked={todo.completed}/>
+        <p style={todo.completed ? completedStyle:null} >{todo.task}</p>
+      </div>
+      <div className="buttons">
+        <button className="del-btn" onClick={ deleteTodo }><i className="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  )
+}
+
+export default Todo
+```
+
+![Delete todo]()
+
+That's it folks! We completed our Full-stack Todo App. 
+
+![Completed]()
+
+## Hacking
+
+Now it's your turn to customize.
+
+* Go wild with the styles. Create your custom Todo Apps.
+* Add more functionality.
+* Filter the tasks as completed and due.
+* Try to add database to your projects.
+
+I recommend to customise the project in this workshop. Share you creation with everyone in [#ship](https://hackclub.slack.com/messages/ship) in hackclub slack. Do share with me too!!! I'm [@Giridhar](https://hackclub.slack.com/team/U013E6KE9UJ) on slack. I'd love to here from you. 
+
+## Inspiration
+
+These are some example to inspire your thoughts.
+
+* **Example-1**: Own phonebook using React and Firebase.
+
+    [Demo](). [Source Code]()
+    
+* **Example-2**: Database for school.
+
+    [Demo](). [Source Code]()
+    
+* **Example-3**: Creating database for book store.
+
+    [Demo](). [Source Code]()
