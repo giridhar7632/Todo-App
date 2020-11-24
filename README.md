@@ -389,6 +389,6 @@ The `on()` method takes two parameters-
 Here, we are going to use the `value` event.
 
 ---
-Event: `value`,
-Typical usage: "Read and listen for changes to the entire contents of a path."
+Event: '`value`',
+Typical usage: 'Read and listen for changes to the entire contents of a path.'
 ---
