@@ -355,6 +355,8 @@ function TodoList(){
 export default TodoList
 ```
 
+### 'Read' operation
+
 Now we are going to read the data in the database, fetch it into an array and display on the screen.
 
 Create a state variable `todoList`. This will be the empty array to which we add the data fetched from database.
@@ -417,7 +419,9 @@ todoRef.on("value", (snapshot) => {
 
 Now that we have the data in `todoList`, we can map through it to display it.
 
-Intially it is an empty array. So we have to check whether it is empty or not, then map through it.
+Intially it is an empty array. So we have to check whether it is empty or not, then map through it. 
+
+For now, let's display using `<h1>`. Later we create a component for displaying it.
 
 ```jsx
 return(
@@ -467,3 +471,74 @@ export default TodoList
 This will display the data that is retrieved from database. Make sure you import and render the `TodoList` component into `App.js`.
 
 ![Retrived data]()
+
+So far we have done **Create** and **Read** operations.
+
+Let's continue to work with **Update** and **Delete** operations.
+
+### Creating Todo Item
+
+Create another file `Todo.js` in the `components` folder. Import React and Firebase. Also create a functional component which takes a prop `todo`.
+
+```jsx
+import React from 'react'
+import firebase from '../Firebase'
+
+function Todo({ todo }){
+  return(
+    <div classsName="todo-item">
+
+    </div>
+  )
+}
+
+export default Todo
+```
+
+Update the `TodoList` by importing `Todo` and rendering it.
+
+```jsx
+return(
+  <div className="todo-list">
+    {todoList ? todoList.map((todo, i) => <Todo todo={ todo } key={ i } />) : null}
+  </div>
+)
+```
+
+<details>
+<summary>Your final TodoList component looks like this:</summary>
+
+```jsx
+import React, { useState, useEffect } from 'react'
+import firebase from '../Firebase'
+import Todo from './Todo'
+
+function TodoList(){
+  const [todoList, setTodoList] = useState([])
+
+  useEffect(() => {
+    const todoRef = firebase.database().ref('todo')
+    // Syncronizing data
+    todoRef.on("value", (snapshot) => {
+      const todos = snapshot.val()
+      const todoList = []
+      for(let id in todos){
+        todoList.push({id,...todos[id]})
+      }
+      
+      setTodoList(todoList)
+    })
+
+  }, [])
+  console.log(todoList.task)
+  return(
+    <div className="todo-list">
+      {todoList ? todoList.map((todo, i) => <Todo todo={ todo } key={ i } />) : null}       // <----------- updated with <Todo />
+    </div>
+  )
+}
+
+export default TodoList
+```
+
+</details>
