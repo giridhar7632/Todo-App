@@ -698,6 +698,8 @@ function Todo({ todo }){
 export default Todo
 ```
 
+</details>
+
 ![Delete todo]()
 
 That's it folks! We completed our Full-stack Todo App. 
