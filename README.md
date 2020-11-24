@@ -273,7 +273,7 @@ function handleClick() {
 Here :point_up_2:, we added the data that we get as input into database. By default the task was incomplete. After the data is added to database, the input field is cleared by setting `task` to empty string(`setTask("")`).
 
 <details>
-<summary>Your final `Input.js` will look like this.</summary>
+<summary>Your final Input.js will look like this.</summary>
 
 ```jsx
 import React, { useState } from 'react'
@@ -434,7 +434,7 @@ return(
 ```
 
 <details>
-<summary>Your `TodoList` component so far looks like:</summary>
+<summary>Your TodoList component so far looks like:</summary>
 
 ```jsx
 import React, { useState, useEffect } from 'react'
@@ -725,12 +725,12 @@ These are some example to inspire your thoughts.
 
 * **Example-1**: Own phonebook using React and Firebase.
 
-    [Demo](). [Source Code]()
+    [Demo](). [Source Code]().
     
 * **Example-2**: Database for school.
 
-    [Demo](). [Source Code]()
+    [Demo](). [Source Code]().
     
 * **Example-3**: Creating database for book store.
 
-    [Demo](). [Source Code]()
+    [Demo](). [Source Code]().
