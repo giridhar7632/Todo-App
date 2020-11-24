@@ -279,7 +279,7 @@ import React, { useState } from 'react'
 import firebase from '../Firebase'
 
 function Input(){
-  const [task, setTask] = useState()
+  const [task, setTask] = useState('')
 
   function handleChange(e){
     setTask(e.target.value)
@@ -542,3 +542,48 @@ export default TodoList
 ```
 
 </details>
+
+Hop on to `Todo` component and let's display the data.
+
+```jsx
+function Todo({ todo }){
+  return(
+    <div className="todo-item">
+      <div className="task">
+        <input type="checkbox" />
+        <p>{todo.task}</p>
+      </div>
+      <div className="buttons">
+        <button className="del-btn"><i className="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  )
+}
+```
+
+This displays the todo items with a `checkbox` and `delete` button.
+
+Let's add functionality to the buttons.
+
+### 'Update' operation
+
+When the `checkbox` is checked, the task is completed. Let's update the value of `completed` to `true`.
+
+Add `onClick` attribute to the checkbox that invokes `completeTodo` function.
+
+```jsx
+<input type="checkbox" onClick={ completeTodo } />
+```
+
+To simultaneously write to specific children of a node without overwriting other child nodes, we can use the `update()` method. When calling `update()` updates lower-level child values by specifying a path for the key.
+
+```jsx
+function completeTodo(){
+  const todoRef = firebase.database().ref('todo')
+  todoRef.child(todo.id).update({                   // <----------- updates the object with the key of todo.id
+    completed: !todo.completed
+  })
+}
+```
+
+
