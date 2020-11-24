@@ -388,7 +388,36 @@ The `on()` method takes two parameters-
 
 Here, we are going to use the `value` event.
 
----
-Event: `value`
-Typical usage: 'Read and listen for changes to the entire contents of a path.'
----
+| Event  | Typical usage  | 
+| :------------- | :----------: |
+| `value` | Read and listen for changes to the entire contents of a path.  |
+
+The callback function is called each and everytime there is a change at the specified location in the database.  The event callback is passed a `snapshot` containing all data at that location, including child data. If there is no data, the snapshot will return `null` when you call `val()` on it.
+
+```jsx
+todoRef.on("value", (snapshot) => {
+  const todos = snapshot.val()          // <---------- value of the data snapshot
+})
+```
+
+:star: **Important**: The `value` event is called every time data is changed at the specified database reference, including changes to children. To limit the size of your snapshots, attach only at the lowest level needed for watching changes. For example, attaching a listener to the root of your database is not recommended.
+
+Now we need the data as an array to put it into state. Declare an empty array and add the `id` and `task` into the array.
+
+```jsx
+todoRef.on("value", (snapshot) => {
+  const todos = snapshot.val()
+  const todoList = []
+  for(let id in todos){
+    todoList.push({id,...todos[id]})            // <------------ adding todos to todoList
+  }
+  setTodoList(todoList)         // <----------- setting the state
+})
+```
+
+Now that we have the data in `todoList`, we can map through it to display it.
+
+Intially it is an empty array. So we have to check whether it is empty or not, then map through it.
+
+```jsx
+return(
